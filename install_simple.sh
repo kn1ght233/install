@@ -163,16 +163,3 @@ install_x-ui() {
 echo -e "${green}开始安装${plain}"
 install_base
 install_x-ui $1
-
-# 安装并配置 firewalld
-if [[ -f /etc/debian_version ]]; then
-    apt-get install firewalld -y
-else
-    yum install firewalld -y
-fi
-
-firewall-cmd --zone=public --add-port=35851/tcp --permanent
-firewall-cmd --zone=public --add-port=35855-35865/tcp --permanent
-firewall-cmd --reload
-
-echo -e "${green}防火墙配置完成，已允许端口 35851 和 35860${plain}"
