@@ -175,4 +175,4 @@ firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --zone=public --add-port=10000-50000/tcp --permanent
 firewall-cmd --reload
 
-echo -e "${green}防火墙配置完成，已允许端口 22 和 11234${plain}"
+echo -e "${green}防火墙配置完成，已允许端口 22 和 11234${plain}。"
